@@ -5,7 +5,7 @@ from scripts.main import data_ingestion
 
 default_args = {
     'retries': 3,
-    'retry_delay': timedelta(minutes=1),
+    'retry_delay': timedelta(minutes=5),
 }
 
 dag = DAG(
