@@ -390,7 +390,7 @@ def upload_data_to_redshift(db_keys, df_agencies, df_bus_positions, df_ecobici_s
     
     string_conn =  f"postgresql://{db_keys['user']}:{db_keys['pwd']}@{db_keys['host']}:{db_keys['port']}/{db_keys['dbname']}"
 
-    engine = sa.create_engine(string_conn)
+    #engine = sa.create_engine(string_conn)
 
     #conn = engine.connect()
 
@@ -414,9 +414,9 @@ def data_ingestion():
 
     df_ecobici_stations, df_ecobici_stations_status = get_ecobici_data(base_url, params)
 
-    db_keys, conn = connect_to_redshift()
+    db_keys, connection = connect_to_redshift()
 
-    upload_data_to_redshift(db_keys, df_agencies, df_bus_positions, df_ecobici_stations, df_ecobici_stations_status, conn)
+    upload_data_to_redshift(db_keys, df_agencies, df_bus_positions, df_ecobici_stations, df_ecobici_stations_status, connection)
 
 # MAIN
     
