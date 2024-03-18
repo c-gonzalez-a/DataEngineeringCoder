@@ -156,33 +156,33 @@ def get_bus_data(base_url, params):
 
     # ACCEDER DATOS DE LA NUEVA METROPOL
 
-    params_NMPositions = params.copy()
-    params_NMPositions.update(la_nueva_metropol)
-    r_NMPositions = requests.get(full_url_busPositions, params=params_NMPositions)
+    # params_NMPositions = params.copy()
+    # params_NMPositions.update(la_nueva_metropol)
+    # r_NMPositions = requests.get(full_url_busPositions, params=params_NMPositions)
 
-    json_NMData = r_NMPositions.json()
-    df_NMPositions = pd.json_normalize(json_NMData)
+    # json_NMData = r_NMPositions.json()
+    # df_NMPositions = pd.json_normalize(json_NMData)
 
     # CARGADO DE LA NUEVA METROPOL AL DF
 
-    df_bus_positions = load_df_bus_positions(df_NMPositions, df_bus_positions)
-    df_agencies = load_df_agencies(df_NMPositions.iloc[0], df_agencies)
+    # df_bus_positions = load_df_bus_positions(df_NMPositions, df_bus_positions)
+    # df_agencies = load_df_agencies(df_NMPositions.iloc[0], df_agencies)
 
     # ACCEDER DATOS DE TALP
 
-    params_TALPPositions = params.copy()
-    params_TALPPositions.update(talp)
-    r_TALPPositions = requests.get(full_url_busPositions, params=params_TALPPositions)
+    # params_TALPPositions = params.copy()
+    # params_TALPPositions.update(talp)
+    # r_TALPPositions = requests.get(full_url_busPositions, params=params_TALPPositions)
 
-    json_TALPData = r_TALPPositions.json()
-    df_TALPPositions = pd.json_normalize(json_TALPData)
+    # json_TALPData = r_TALPPositions.json()
+    # df_TALPPositions = pd.json_normalize(json_TALPData)
 
     # CARGADO DEL TALP
 
-    df_bus_positions = load_df_bus_positions(df_TALPPositions, df_bus_positions)
-    # Convierte el timestamp a un objeto datetime
-    df_bus_positions['timestamp'] = pd.to_datetime(df_bus_positions['timestamp'], unit='s')
-    df_agencies = load_df_agencies(df_TALPPositions.iloc[0], df_agencies)
+    # df_bus_positions = load_df_bus_positions(df_TALPPositions, df_bus_positions)
+    # # Convierte el timestamp a un objeto datetime
+    # df_bus_positions['timestamp'] = pd.to_datetime(df_bus_positions['timestamp'], unit='s')
+    # df_agencies = load_df_agencies(df_TALPPositions.iloc[0], df_agencies)
 
     return df_bus_positions, df_agencies
 
