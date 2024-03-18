@@ -414,3 +414,259 @@ Please take a look at these docs to improve your DAG import time:
 * https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 202
 [2024-03-18T01:52:34.334+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
 [2024-03-18T01:52:34.335+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:52:34.335+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-18T01:53:04.508+0000] {processor.py:157} INFO - Started process (PID=206) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-18T01:53:04.509+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-18T01:53:04.510+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:53:04.509+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-18T01:53:16.552+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-18T01:53:17.452+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
+[2024-03-18T01:53:18.612+0000] {logging_mixin.py:154} INFO - Tabla bus_positions creada con exito en DB
+[2024-03-18T01:53:19.624+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations creada con exito en DB
+[2024-03-18T01:53:21.011+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations_status creada con exito en DB
+[2024-03-18T01:53:21.012+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:53:21.012+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-18T01:53:22.152+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-18T01:53:22.153+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:53:22.153+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-18T01:53:23.117+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 0: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23734', 'agency_id': 145, 'route_id': '1275', 'latitude': -34.70719, 'longitude': -58.28826, 'speed': 6.388888, 'timestamp': 1710726756, 'route_short_name': '324R2', 'trip_headsign': 'C - Est.CASEROS X RIO DESEADO - CAMPO de Mayo'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:23.772+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 1: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23774', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.85723, 'longitude': -58.21244, 'speed': 0.0, 'timestamp': 1710726758, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:24.492+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 2: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23784', 'agency_id': 145, 'route_id': '1285', 'latitude': -34.8575, 'longitude': -58.21246, 'speed': 0.0, 'timestamp': 1710726006, 'route_short_name': '324T5', 'trip_headsign': 'B - Barrio Centenario (por Milan) - IDA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:25.176+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 3: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23815', 'agency_id': 145, 'route_id': '1279', 'latitude': -34.79036, 'longitude': -58.2449, 'speed': 0.0, 'timestamp': 1710726758, 'route_short_name': '324R3', 'trip_headsign': 'A - Barrio Sitra - IDA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:27.158+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 4: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23858', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.78264, 'longitude': -58.260006, 'speed': 19.4444447, 'timestamp': 1710726758, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:28.092+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 5: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23859', 'agency_id': 145, 'route_id': '1293', 'latitude': -34.70244, 'longitude': -58.3179741, 'speed': 7.222222, 'timestamp': 1710726756, 'route_short_name': '324R9', 'trip_headsign': 'a Moreno x Panamericana'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:29.357+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 6: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23865', 'agency_id': 145, 'route_id': '1293', 'latitude': -34.76175, 'longitude': -58.2764854, 'speed': 0.0, 'timestamp': 1710726758, 'route_short_name': '324R9', 'trip_headsign': 'a Moreno x Panamericana'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:30.522+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 7: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23871', 'agency_id': 145, 'route_id': '1276', 'latitude': -34.8156, 'longitude': -58.25429, 'speed': 2.5, 'timestamp': 1710726728, 'route_short_name': '324R2', 'trip_headsign': 'X Thames - S.Isidro'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:32.360+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 8: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23894', 'agency_id': 145, 'route_id': '1286', 'latitude': -34.78116, 'longitude': -58.26063, 'speed': 10.833333, 'timestamp': 1710726758, 'route_short_name': '324T5', 'trip_headsign': 'B - Barrio Centenario (por Milan) - VUELTA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:33.561+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 9: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23922', 'agency_id': 145, 'route_id': '1286', 'latitude': -34.84652, 'longitude': -58.20727, 'speed': 0.0, 'timestamp': 1710723996, 'route_short_name': '324T5', 'trip_headsign': 'B - Barrio Centenario (por Milan) - VUELTA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:34.355+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 10: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23927', 'agency_id': 145, 'route_id': '1285', 'latitude': -34.85738, 'longitude': -58.21245, 'speed': 0.0, 'timestamp': 1710726758, 'route_short_name': '324T5', 'trip_headsign': 'B - Barrio Centenario (por Milan) - IDA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:53:35.029+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:53:35.027+0000] {timeout.py:68} ERROR - Process timed out, PID: 206
+[2024-03-18T01:53:35.294+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 11: DagBag import timeout for /opt/airflow/dags/data_ingestion_daily.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 206
+[2024-03-18T01:53:36.999+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 12: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23966', 'agency_id': 145, 'route_id': '1275', 'latitude': -34.71827, 'longitude': -58.30142, 'speed': 9.444444, 'timestamp': 1710726728, 'route_short_name': '324R2', 'trip_headsign': 'C - Est.CASEROS X RIO DESEADO - CAMPO de Mayo'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:54:46.634+0000] {processor.py:157} INFO - Started process (PID=174) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-18T01:54:46.636+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-18T01:54:46.637+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:54:46.637+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-18T01:55:00.953+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-18T01:55:02.578+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
+[2024-03-18T01:55:03.535+0000] {logging_mixin.py:154} INFO - Tabla bus_positions creada con exito en DB
+[2024-03-18T01:55:04.856+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations creada con exito en DB
+[2024-03-18T01:55:05.556+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations_status creada con exito en DB
+[2024-03-18T01:55:05.557+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:55:05.557+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-18T01:55:06.450+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-18T01:55:06.451+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:55:06.451+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-18T01:55:07.682+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 0: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23734', 'agency_id': 145, 'route_id': '1275', 'latitude': -34.71006, 'longitude': -58.2917, 'speed': 9.722222, 'timestamp': 1710726818, 'route_short_name': '324R2', 'trip_headsign': 'C - Est.CASEROS X RIO DESEADO - CAMPO de Mayo'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:08.471+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 1: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23774', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.85723, 'longitude': -58.21245, 'speed': 0.0, 'timestamp': 1710726818, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:09.182+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 2: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23784', 'agency_id': 145, 'route_id': '1285', 'latitude': -34.8575, 'longitude': -58.21246, 'speed': 0.0, 'timestamp': 1710726006, 'route_short_name': '324T5', 'trip_headsign': 'B - Barrio Centenario (por Milan) - IDA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:09.899+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 3: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23815', 'agency_id': 145, 'route_id': '1279', 'latitude': -34.79002, 'longitude': -58.245575, 'speed': 8.888888, 'timestamp': 1710726818, 'route_short_name': '324R3', 'trip_headsign': 'A - Barrio Sitra - IDA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:10.694+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 4: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23858', 'agency_id': 145, 'route_id': '1285', 'latitude': -34.7906, 'longitude': -58.25266, 'speed': 21.3888874, 'timestamp': 1710726818, 'route_short_name': '324T5', 'trip_headsign': 'B - Barrio Centenario (por Milan) - IDA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:11.952+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 5: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23859', 'agency_id': 145, 'route_id': '1293', 'latitude': -34.7029, 'longitude': -58.31851, 'speed': 0.0, 'timestamp': 1710726818, 'route_short_name': '324R9', 'trip_headsign': 'a Moreno x Panamericana'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:12.909+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 6: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23865', 'agency_id': 145, 'route_id': '1293', 'latitude': -34.75944, 'longitude': -58.2720451, 'speed': 9.166666, 'timestamp': 1710726818, 'route_short_name': '324R9', 'trip_headsign': 'a Moreno x Panamericana'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:14.872+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 7: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23871', 'agency_id': 145, 'route_id': '1276', 'latitude': -34.8156, 'longitude': -58.25429, 'speed': 2.5, 'timestamp': 1710726728, 'route_short_name': '324R2', 'trip_headsign': 'X Thames - S.Isidro'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:15.996+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 8: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23894', 'agency_id': 145, 'route_id': '1286', 'latitude': -34.77915, 'longitude': -58.26156, 'speed': 1.111111, 'timestamp': 1710726788, 'route_short_name': '324T5', 'trip_headsign': 'B - Barrio Centenario (por Milan) - VUELTA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:16.734+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:55:16.733+0000] {timeout.py:68} ERROR - Process timed out, PID: 174
+[2024-03-18T01:55:16.980+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 9: DagBag import timeout for /opt/airflow/dags/data_ingestion_daily.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 174
+[2024-03-18T01:55:18.095+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 10: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23927', 'agency_id': 145, 'route_id': '1285', 'latitude': -34.85738, 'longitude': -58.21245, 'speed': 0.0, 'timestamp': 1710726818, 'route_short_name': '324T5', 'trip_headsign': 'B - Barrio Centenario (por Milan) - IDA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:19.151+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 11: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23953', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.82864, 'longitude': -58.2444344, 'speed': 9.722222, 'timestamp': 1710726818, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:20.044+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 12: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23966', 'agency_id': 145, 'route_id': '1275', 'latitude': -34.72628, 'longitude': -58.30152, 'speed': 13.8888884, 'timestamp': 1710726818, 'route_short_name': '324R2', 'trip_headsign': 'C - Est.CASEROS X RIO DESEADO - CAMPO de Mayo'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:21.433+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 13: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23968', 'agency_id': 145, 'route_id': '1275', 'latitude': -34.71969, 'longitude': -58.26308, 'speed': 0.0, 'timestamp': 1710726818, 'route_short_name': '324R2', 'trip_headsign': 'C - Est.CASEROS X RIO DESEADO - CAMPO de Mayo'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:22.419+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 14: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23980', 'agency_id': 145, 'route_id': '1291', 'latitude': -34.85768, 'longitude': -58.2118, 'speed': 2.5, 'timestamp': 1710724506, 'route_short_name': '324R6C', 'trip_headsign': 'a Moreno x Virreyes'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:23.261+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 15: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '23993', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.7736, 'longitude': -58.2675552, 'speed': 0.0, 'timestamp': 1710726818, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:23.970+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 16: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '24038', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.86294, 'longitude': -58.2034149, 'speed': 3.888888, 'timestamp': 1710726818, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:25.001+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 17: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '24104', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.69154, 'longitude': -58.30858, 'speed': 1.111111, 'timestamp': 1710726818, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:25.740+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 18: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '24372', 'agency_id': 145, 'route_id': '1286', 'latitude': -34.80752, 'longitude': -58.2334061, 'speed': 11.9444437, 'timestamp': 1710726818, 'route_short_name': '324T5', 'trip_headsign': 'B - Barrio Centenario (por Milan) - VUELTA'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:26.423+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 19: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '24445', 'agency_id': 145, 'route_id': '1291', 'latitude': -34.71155, 'longitude': -58.26908, 'speed': 6.111111, 'timestamp': 1710726818, 'route_short_name': '324R6C', 'trip_headsign': 'a Moreno x Virreyes'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:27.133+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 20: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '24500', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.82425, 'longitude': -58.247654, 'speed': 4.444444, 'timestamp': 1710726818, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:28.056+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 21: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '24675', 'agency_id': 145, 'route_id': '1293', 'latitude': -34.85769, 'longitude': -58.2116852, 'speed': 10.833333, 'timestamp': 1710725406, 'route_short_name': '324R9', 'trip_headsign': 'a Moreno x Panamericana'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:29.166+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 22: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '25231', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.85733, 'longitude': -58.2124939, 'speed': 0.0, 'timestamp': 1710726456, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:31.062+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 23: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '25420', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.85775, 'longitude': -58.21268, 'speed': 0.0, 'timestamp': 1710725948, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:32.198+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 24: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '25702', 'agency_id': 145, 'route_id': '1280', 'latitude': -34.76067, 'longitude': -58.27807, 'speed': 0.0, 'timestamp': 1710726818, 'route_short_name': '324R3', 'trip_headsign': 'a Tribunales de Retiro/Htal. Ferroviario'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:33.146+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 25: (psycopg2.errors.DatatypeMismatch) column "timestamp" is of type timestamp without time zone but expression is of type integer
+HINT:  You will need to rewrite or cast the expression.
+
+[SQL: INSERT INTO bus_positions VALUES (%(id)s, %(agency_id)s, %(route_id)s, %(latitude)s, %(longitude)s, %(speed)s, %(timestamp)s, %(route_short_name)s, %(trip_headsign)s)]
+[parameters: {'id': '36006', 'agency_id': 145, 'route_id': '1294', 'latitude': -34.83121, 'longitude': -58.2289658, 'speed': 6.388888, 'timestamp': 1710726816, 'route_short_name': '324R9', 'trip_headsign': 'a Pte. Saavedra'}]
+(Background on this error at: https://sqlalche.me/e/14/f405)
+[2024-03-18T01:55:33.147+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-18T01:55:33.148+0000] {logging_mixin.py:154} INFO - [2024-03-18T01:55:33.148+0000] {utils.py:56} INFO - Cargando datos en la base de datos...

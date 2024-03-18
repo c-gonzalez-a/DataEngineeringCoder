@@ -313,3 +313,179 @@ File Path                                  PID    Runtime      # DAGs    # Error
 /opt/airflow/dags/data_ingestion_daily.py                           0           1  50.34s          2024-03-18T01:41:59
 ================================================================================
 [2024-03-18T01:42:08.073+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-03-18T01:45:00.854+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2024-03-18T01:45:00.854+0000] {manager.py:488} INFO - Process each file at most once every 10 seconds
+[2024-03-18T01:45:00.855+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-03-18T01:45:00.855+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-03-18T01:45:00.876+0000] {manager.py:758} INFO - There are 1 files in /opt/airflow/dags
+[2024-03-18T01:45:00.972+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/data_ingestion_daily.py    174  0.04s             0           0
+================================================================================
+[2024-03-18T01:45:31.128+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/data_ingestion_daily.py    174  30.20s            0           0
+================================================================================
+[2024-03-18T01:45:51.259+0000] {manager.py:1209} ERROR - Processor for /opt/airflow/dags/data_ingestion_daily.py with PID 174 started at 2024-03-18T01:45:00.927815+00:00 has timed out, killing it.
+[2024-03-18T01:46:01.362+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    178  0.00s             0           1  50.33s          2024-03-18T01:45:51
+================================================================================
+[2024-03-18T01:46:31.565+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    178  30.21s            0           1  50.33s          2024-03-18T01:45:51
+================================================================================
+[2024-03-18T01:46:51.701+0000] {manager.py:1209} ERROR - Processor for /opt/airflow/dags/data_ingestion_daily.py with PID 178 started at 2024-03-18T01:46:01.357899+00:00 has timed out, killing it.
+[2024-03-18T01:47:01.793+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    182  0.00s             0           1  50.34s          2024-03-18T01:46:51
+================================================================================
+[2024-03-18T01:47:31.997+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    182  30.21s            0           1  50.34s          2024-03-18T01:46:51
+================================================================================
+[2024-03-18T01:47:52.134+0000] {manager.py:1209} ERROR - Processor for /opt/airflow/dags/data_ingestion_daily.py with PID 182 started at 2024-03-18T01:47:01.789491+00:00 has timed out, killing it.
+[2024-03-18T01:48:02.231+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    186  0.00s             0           1  50.34s          2024-03-18T01:47:52
+================================================================================
+[2024-03-18T01:48:32.450+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    186  30.22s            0           1  50.34s          2024-03-18T01:47:52
+================================================================================
+[2024-03-18T01:48:52.600+0000] {manager.py:1209} ERROR - Processor for /opt/airflow/dags/data_ingestion_daily.py with PID 186 started at 2024-03-18T01:48:02.227444+00:00 has timed out, killing it.
+[2024-03-18T01:49:02.689+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    190  0.00s             0           1  50.37s          2024-03-18T01:48:52
+================================================================================
+[2024-03-18T01:49:32.893+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    190  30.21s            0           1  50.37s          2024-03-18T01:48:52
+================================================================================
+[2024-03-18T01:49:53.032+0000] {manager.py:1209} ERROR - Processor for /opt/airflow/dags/data_ingestion_daily.py with PID 190 started at 2024-03-18T01:49:02.684611+00:00 has timed out, killing it.
+[2024-03-18T01:50:01.098+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-03-18T01:50:01.121+0000] {manager.py:758} INFO - There are 1 files in /opt/airflow/dags
+[2024-03-18T01:50:03.162+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    194  0.00s             0           1  50.35s          2024-03-18T01:49:53
+================================================================================
+[2024-03-18T01:50:33.374+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    194  30.22s            0           1  50.35s          2024-03-18T01:49:53
+================================================================================
+[2024-03-18T01:50:53.505+0000] {manager.py:1209} ERROR - Processor for /opt/airflow/dags/data_ingestion_daily.py with PID 194 started at 2024-03-18T01:50:03.157928+00:00 has timed out, killing it.
+[2024-03-18T01:51:03.604+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    198  0.00s             0           1  50.35s          2024-03-18T01:50:53
+================================================================================
+[2024-03-18T01:51:33.817+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    198  30.22s            0           1  50.35s          2024-03-18T01:50:53
+================================================================================
+[2024-03-18T01:51:53.951+0000] {manager.py:1209} ERROR - Processor for /opt/airflow/dags/data_ingestion_daily.py with PID 198 started at 2024-03-18T01:51:03.600742+00:00 has timed out, killing it.
+[2024-03-18T01:52:04.048+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    202  0.00s             0           1  50.35s          2024-03-18T01:51:53
+================================================================================
+[2024-03-18T01:52:34.249+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    202  30.21s            0           1  50.35s          2024-03-18T01:51:53
+================================================================================
+[2024-03-18T01:52:54.386+0000] {manager.py:1209} ERROR - Processor for /opt/airflow/dags/data_ingestion_daily.py with PID 202 started at 2024-03-18T01:52:04.044055+00:00 has timed out, killing it.
+[2024-03-18T01:53:04.488+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/data_ingestion_daily.py    206  0.00s             0           1  50.34s          2024-03-18T01:52:54
+================================================================================
+[2024-03-18T01:53:37.607+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-03-18T01:53:37.912+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
+[2024-03-18T01:54:46.536+0000] {manager.py:487} INFO - Processing files using up to 2 processes at a time 
+[2024-03-18T01:54:46.536+0000] {manager.py:488} INFO - Process each file at most once every 10 seconds
+[2024-03-18T01:54:46.537+0000] {manager.py:489} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2024-03-18T01:54:46.538+0000] {manager.py:755} INFO - Searching for files in /opt/airflow/dags
+[2024-03-18T01:54:46.558+0000] {manager.py:758} INFO - There are 1 files in /opt/airflow/dags
+[2024-03-18T01:54:46.649+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/data_ingestion_daily.py    174  0.04s             0           0
+================================================================================
+[2024-03-18T01:55:16.832+0000] {manager.py:887} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                    PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+-----------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/data_ingestion_daily.py    174  30.22s            0           0
+================================================================================
+[2024-03-18T01:55:36.968+0000] {manager.py:1209} ERROR - Processor for /opt/airflow/dags/data_ingestion_daily.py with PID 174 started at 2024-03-18T01:54:46.610740+00:00 has timed out, killing it.
+[2024-03-18T01:55:39.807+0000] {manager.py:469} INFO - Exiting gracefully upon receiving signal 15
