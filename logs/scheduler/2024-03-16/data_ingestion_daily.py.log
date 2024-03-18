@@ -1,0 +1,117 @@
+[2024-03-16T18:50:54.954+0000] {processor.py:157} INFO - Started process (PID=174) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:50:54.956+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-16T18:50:54.958+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:50:54.957+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:51:03.604+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-16T18:51:04.998+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
+[2024-03-16T18:51:05.735+0000] {logging_mixin.py:154} INFO - Tabla bus_positions creada con exito en DB
+[2024-03-16T18:51:06.294+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations creada con exito en DB
+[2024-03-16T18:51:06.875+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations_status creada con exito en DB
+[2024-03-16T18:51:06.877+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:51:06.877+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:51:09.689+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-16T18:51:09.691+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:51:09.691+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:51:25.044+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:51:25.043+0000] {timeout.py:68} ERROR - Process timed out, PID: 174
+[2024-03-16T18:51:25.248+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 13: DagBag import timeout for /opt/airflow/dags/data_ingestion_daily.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 174
+[2024-03-16T18:51:55.622+0000] {processor.py:157} INFO - Started process (PID=178) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:51:55.625+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-16T18:51:55.627+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:51:55.626+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:52:08.236+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-16T18:52:09.203+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
+[2024-03-16T18:52:09.971+0000] {logging_mixin.py:154} INFO - Tabla bus_positions creada con exito en DB
+[2024-03-16T18:52:10.523+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations creada con exito en DB
+[2024-03-16T18:52:11.112+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations_status creada con exito en DB
+[2024-03-16T18:52:11.114+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:52:11.114+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:52:13.814+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-16T18:52:13.816+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:52:13.816+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:52:26.021+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:52:26.019+0000] {timeout.py:68} ERROR - Process timed out, PID: 178
+[2024-03-16T18:52:26.229+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 12: DagBag import timeout for /opt/airflow/dags/data_ingestion_daily.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 178
+[2024-03-16T18:52:56.385+0000] {processor.py:157} INFO - Started process (PID=182) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:52:56.387+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-16T18:52:56.391+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:52:56.391+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:53:06.227+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-16T18:53:07.187+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
+[2024-03-16T18:53:07.988+0000] {logging_mixin.py:154} INFO - Tabla bus_positions creada con exito en DB
+[2024-03-16T18:53:08.555+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations creada con exito en DB
+[2024-03-16T18:53:09.135+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations_status creada con exito en DB
+[2024-03-16T18:53:09.138+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:53:09.138+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:53:11.928+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-16T18:53:11.930+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:53:11.930+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:53:26.879+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:53:26.877+0000] {timeout.py:68} ERROR - Process timed out, PID: 182
+[2024-03-16T18:53:27.549+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 13: DagBag import timeout for /opt/airflow/dags/data_ingestion_daily.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 182
+[2024-03-16T18:53:57.097+0000] {processor.py:157} INFO - Started process (PID=186) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:53:57.100+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-16T18:53:57.102+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:53:57.102+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:54:06.479+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-16T18:54:07.435+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
+[2024-03-16T18:54:08.216+0000] {logging_mixin.py:154} INFO - Tabla bus_positions creada con exito en DB
+[2024-03-16T18:54:08.816+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations creada con exito en DB
+[2024-03-16T18:54:09.386+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations_status creada con exito en DB
+[2024-03-16T18:54:09.392+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:54:09.391+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:54:11.903+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-16T18:54:11.906+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:54:11.905+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:54:27.226+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:54:27.225+0000] {timeout.py:68} ERROR - Process timed out, PID: 186
+[2024-03-16T18:54:27.419+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 19: DagBag import timeout for /opt/airflow/dags/data_ingestion_daily.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 186
+[2024-03-16T18:54:57.847+0000] {processor.py:157} INFO - Started process (PID=190) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:54:57.849+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-16T18:54:57.853+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:54:57.851+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:55:05.419+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-16T18:55:05.993+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
+[2024-03-16T18:55:06.570+0000] {logging_mixin.py:154} INFO - Tabla bus_positions creada con exito en DB
+[2024-03-16T18:55:07.133+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations creada con exito en DB
+[2024-03-16T18:55:07.699+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations_status creada con exito en DB
+[2024-03-16T18:55:07.702+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:55:07.701+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:55:10.616+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-16T18:55:10.617+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:55:10.617+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:55:28.199+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:55:28.195+0000] {timeout.py:68} ERROR - Process timed out, PID: 190
+[2024-03-16T18:55:28.423+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 16: DagBag import timeout for /opt/airflow/dags/data_ingestion_daily.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 190
+[2024-03-16T18:55:58.719+0000] {processor.py:157} INFO - Started process (PID=194) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:55:58.722+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-16T18:55:58.726+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:55:58.725+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:56:08.029+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-16T18:56:08.623+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
+[2024-03-16T18:56:09.278+0000] {logging_mixin.py:154} INFO - Tabla bus_positions creada con exito en DB
+[2024-03-16T18:56:09.902+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations creada con exito en DB
+[2024-03-16T18:56:10.497+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations_status creada con exito en DB
+[2024-03-16T18:56:10.500+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:56:10.499+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:56:12.330+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-16T18:56:12.332+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:56:12.332+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:56:29.016+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:56:29.009+0000] {timeout.py:68} ERROR - Process timed out, PID: 194
+[2024-03-16T18:56:29.018+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 14: DagBag import timeout for /opt/airflow/dags/data_ingestion_daily.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 194
+[2024-03-16T18:56:59.456+0000] {processor.py:157} INFO - Started process (PID=198) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:56:59.459+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-16T18:56:59.463+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:56:59.462+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:57:10.790+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-16T18:57:11.723+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
+[2024-03-16T18:57:13.144+0000] {logging_mixin.py:154} INFO - Tabla bus_positions creada con exito en DB
+[2024-03-16T18:57:14.461+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations creada con exito en DB
+[2024-03-16T18:57:15.448+0000] {logging_mixin.py:154} INFO - Tabla ecobici_stations_status creada con exito en DB
+[2024-03-16T18:57:15.451+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:57:15.451+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:57:19.079+0000] {logging_mixin.py:154} INFO - Datos cargados exitosamente en la base de datos
+[2024-03-16T18:57:19.081+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:57:19.080+0000] {utils.py:56} INFO - Cargando datos en la base de datos...
+[2024-03-16T18:57:30.193+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:57:30.188+0000] {timeout.py:68} ERROR - Process timed out, PID: 198
+[2024-03-16T18:57:30.716+0000] {logging_mixin.py:154} INFO - Error al insertar el registro 9: DagBag import timeout for /opt/airflow/dags/data_ingestion_daily.py after 30.0s.
+Please take a look at these docs to improve your DAG import time:
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#top-level-python-code
+* https://airflow.apache.org/docs/apache-airflow/2.7.3/best-practices.html#reducing-dag-complexity, PID: 198
+[2024-03-16T18:58:00.166+0000] {processor.py:157} INFO - Started process (PID=202) to work on /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:58:00.168+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/data_ingestion_daily.py for tasks to queue
+[2024-03-16T18:58:00.171+0000] {logging_mixin.py:154} INFO - [2024-03-16T18:58:00.170+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/data_ingestion_daily.py
+[2024-03-16T18:58:10.100+0000] {logging_mixin.py:154} INFO - Conectado a Redshift con éxito!
+[2024-03-16T18:58:11.248+0000] {logging_mixin.py:154} INFO - Tabla agencies creada con exito en DB
