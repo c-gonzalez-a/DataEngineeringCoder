@@ -144,17 +144,26 @@ def get_bus_data(base_url, params):
     params_PJPositions = params.copy()
     params_PJPositions.update(primera_junta)
 
-    r_PJPositions = requests.get(full_url_busPositions, params=params_PJPositions)
-    json_PJData = r_PJPositions.json()
-    df_PJPositions = pd.json_normalize(json_PJData)
+    try:
+        r_PJPositions = requests.get(full_url_busPositions, params=params_PJPositions)
+        json_PJData = r_PJPositions.json()
+        df_PJPositions = pd.json_normalize(json_PJData)
+    
+        if df_PJPositions.empty:
+            raise ValueError("There is no information about the bus positions.")
 
-    # Suponiendo que df_PJPositions es tu DataFrame y 'timestamp' es la columna que deseas convertir
-    df_PJPositions['timestamp'] = pd.to_datetime(df_PJPositions['timestamp'], unit='s')  # 'unit='s'' supone que el int representa un tiempo Unix en segundos
+        # TRANSFORMACION DE LOS DATOS
 
-    # CARGADO DE PJ AL DF
+        # Suponiendo que df_PJPositions es tu DataFrame y 'timestamp' es la columna que deseas convertir
+        df_PJPositions['timestamp'] = pd.to_datetime(df_PJPositions['timestamp'], unit='s')
+        
+        # CARGADO DE PJ AL DF
 
-    df_bus_positions = load_df_bus_positions(df_PJPositions, df_bus_positions)
-    df_agencies = load_df_agencies(df_PJPositions.iloc[0], df_agencies)
+        df_bus_positions = load_df_bus_positions(df_PJPositions, df_bus_positions)
+        df_agencies = load_df_agencies(df_PJPositions.iloc[0], df_agencies)
+
+    except ValueError as e:
+        print("Warning Primera Junta:", e)
 
     # ACCEDER DATOS DE LA NUEVA METROPOL
 
@@ -438,8 +447,6 @@ def data_ingestion():
     except Exception as e:
         
         print(e)
-
-    
 
 # MAIN
     
