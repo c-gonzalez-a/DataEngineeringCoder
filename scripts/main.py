@@ -101,7 +101,7 @@ def connect_to_api():
 
     return base_url,params
 
-#### EXTRACCION DE DATOS
+#### EXTRACCION Y TRANSFORMACION DE DATOS DE LOS BUS
 
 def get_bus_data(base_url, params):
 
@@ -197,7 +197,7 @@ def get_bus_data(base_url, params):
 
     return df_bus_positions, df_agencies
 
-# EXTRACCION DATOS DE LAS ESTACIONES DE ECOBICI
+# EXTRACCION Y TRANSFORMACION DE DATOS DE LAS ESTACIONES DE ECOBICI
     
 def get_ecobici_data(base_url, params):
 
@@ -423,20 +423,35 @@ def upload_data_to_redshift(df_agencies, df_bus_positions, df_ecobici_stations, 
 
     load_to_sql(df_ecobici_stations_status, "ecobici_stations_status", conn)
 
+#### ETL PROCESS SUMMARY
+    
+def etl_process(base_url, params, conn):
+
+    df_bus_positions, df_agencies = get_bus_data(base_url, params)
+
+    df_ecobici_stations, df_ecobici_stations_status = get_ecobici_data(base_url, params)
+
+    crear_tablas_en_db(conn)
+
+    upload_data_to_redshift(df_agencies, df_bus_positions, df_ecobici_stations, df_ecobici_stations_status, conn)
+
+    conn.close()
+
+
 # DATA INGESTION
     
 def data_ingestion():
     
     base_url, params = connect_to_api()
 
-    df_bus_positions, df_agencies = get_bus_data(base_url, params)
-
-    df_ecobici_stations, df_ecobici_stations_status = get_ecobici_data(base_url, params)
-
     try:
         conn = connect_to_redshift()
 
         if conn is not None:
+
+            df_bus_positions, df_agencies = get_bus_data(base_url, params)
+
+            df_ecobici_stations, df_ecobici_stations_status = get_ecobici_data(base_url, params)
 
             crear_tablas_en_db(conn)
 
