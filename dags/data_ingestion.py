@@ -26,7 +26,5 @@ dag = DAG(
 task_1 = PythonOperator(
     task_id='transformar_data',
     python_callable=data_ingestion,
-    #op_args=["{{ ds }} {{ execution_date.hour }}"],
     dag=dag,
-    # execution_date=execution_time
 )
