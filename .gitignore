@@ -1,2 +1,5 @@
 config/pipeline.conf
 config/fernet_key.env
+logs/
+dags/__pycache__
+scripts/__pycache__
