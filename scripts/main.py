@@ -2,8 +2,7 @@
 
 import requests
 import pandas as pd
-from utils import read_api_credentials
-from utils import load_to_sql
+from scripts.utils import read_api_credentials, load_to_sql
 from datetime import datetime
 import sqlalchemy as sa
 
@@ -293,21 +292,7 @@ def get_ecobici_data(base_url, params):
 
 #### CONEXION CON BASE DE DATOS
 
-def connect_to_redshift():
-    
-    db_keys = read_api_credentials("config/pipeline.conf", "RedShift")
-
-    try:  
-        string_conn =  f"postgresql://{db_keys['user']}:{db_keys['pwd']}@{db_keys['host']}:{db_keys['port']}/{db_keys['dbname']}"
-        engine = sa.create_engine(string_conn)
-        conn = engine.connect()
-
-        print("Conectado a Redshift con éxito!")
-        
-    except Exception as e:
-        print("No es posible conectar a Redshift")
-        print(e)
-
+def crear_tablas_en_db(conn):
     try:
         conn.execute("""
             DROP TABLE camilagonzalezalejo02_coderhouse.agencies;
@@ -394,7 +379,22 @@ def connect_to_redshift():
         print("No es posible crear tabla ecobici_stations_status en DB: ")
         print(e)
 
-    return conn
+def connect_to_redshift():
+    
+    db_keys = read_api_credentials("config/pipeline.conf", "RedShift")
+
+    try:  
+        string_conn =  f"postgresql://{db_keys['user']}:{db_keys['pwd']}@{db_keys['host']}:{db_keys['port']}/{db_keys['dbname']}"
+        engine = sa.create_engine(string_conn)
+        conn = engine.connect()
+
+        print("Conectado a Redshift con éxito!")
+
+        return conn
+        
+    except Exception as e:
+        print("No es posible conectar a Redshift")
+        print(e)
 
 #### SUBIDA DE DATOS REDSHIFT
         
@@ -424,11 +424,22 @@ def data_ingestion():
 
     df_ecobici_stations, df_ecobici_stations_status = get_ecobici_data(base_url, params)
 
-    connection = connect_to_redshift()
+    try:
+        conn = connect_to_redshift()
 
-    upload_data_to_redshift(df_agencies, df_bus_positions, df_ecobici_stations, df_ecobici_stations_status, connection)
+        if conn is not None:
 
-    connection.close()
+            crear_tablas_en_db(conn)
+
+            upload_data_to_redshift(df_agencies, df_bus_positions, df_ecobici_stations, df_ecobici_stations_status, conn)
+
+            conn.close()
+        
+    except Exception as e:
+        
+        print(e)
+
+    
 
 # MAIN
     
