@@ -13,13 +13,18 @@ dag = DAG(
     default_args=default_args,
     description='DAG para ejecutar tareas diarias',
     schedule_interval=timedelta(days=1),
-    start_date=datetime(2024, 3, 16),
+    start_date=datetime(2024, 3, 28),
     catchup=False,
 )
+
+# Definir la hora específica a la que se ejecutará la tarea (en este caso, 1:00 AM)
+# execution_time = datetime.now() + timedelta(days=1)
+# execution_time = execution_time.replace(hour=1, minute=0, second=0, microsecond=0)
 
 task_1 = PythonOperator(
     task_id='transformar_data',
     python_callable=data_ingestion,
     #op_args=["{{ ds }} {{ execution_date.hour }}"],
     dag=dag,
+    # execution_date=execution_time
 )
