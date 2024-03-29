@@ -314,10 +314,10 @@ def crear_tablas_en_db(conn):
         sortkey(agency_id)
         """)
         #conn.commit()
-        print("Tabla agencies creada con exito en DB")
+        print("Agencies table created successfully in DB")
         
     except Exception as e:
-        print("No es posible crear tabla agencies en DB: ")
+        print("Unable to create agencies table in DB: ")
         print(e)
 
     try:
@@ -338,10 +338,10 @@ def crear_tablas_en_db(conn):
         DISTKEY (agency_id)
         sortkey(agency_id)   
         """)
-        print("Tabla bus_positions creada con exito en DB")
+        print("bus_positions table created successfully in DB")
         
     except Exception as e:
-        print("No es posible crear tabla bus_positions en DB: ")
+        print("Unable to create tabla bus_positions in DB: ")
         print(e)
 
     try:
@@ -360,10 +360,10 @@ def crear_tablas_en_db(conn):
         DISTKEY (station_id)
         sortkey(station_id)
         """)
-        print("Tabla ecobici_stations creada con exito en DB")
+        print("ecobici_stations table created successfully in DB")
         
     except Exception as e:
-        print("No es posible crear tabla ecobici_stations en DB: ")
+        print("Unable to create tabla ecobici_stations in DB: ")
         print(e)
 
     try:
@@ -382,10 +382,10 @@ def crear_tablas_en_db(conn):
         DISTKEY (station_id)
         sortkey(station_id)
         """)
-        print("Tabla ecobici_stations_status creada con exito en DB")
+        print("ecobici_stations_status table created successfully in DB")
         
     except Exception as e:
-        print("No es posible crear tabla ecobici_stations_status en DB: ")
+        print("Unable to create ecobici_stations_status in DB: ")
         print(e)
 
 def connect_to_redshift():
