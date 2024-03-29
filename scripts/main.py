@@ -2,8 +2,8 @@
 
 import requests
 import pandas as pd
-from scripts.utils import read_api_credentials
-from scripts.utils import load_to_sql
+from utils import read_api_credentials
+from utils import load_to_sql
 from datetime import datetime
 import sqlalchemy as sa
 
@@ -149,6 +149,9 @@ def get_bus_data(base_url, params):
     json_PJData = r_PJPositions.json()
     df_PJPositions = pd.json_normalize(json_PJData)
 
+    # Suponiendo que df_PJPositions es tu DataFrame y 'timestamp' es la columna que deseas convertir
+    df_PJPositions['timestamp'] = pd.to_datetime(df_PJPositions['timestamp'], unit='s')  # 'unit='s'' supone que el int representa un tiempo Unix en segundos
+
     # CARGADO DE PJ AL DF
 
     df_bus_positions = load_df_bus_positions(df_PJPositions, df_bus_positions)
@@ -242,6 +245,10 @@ def get_ecobici_data(base_url, params):
     # Eliminar la columna "groups"
     df_ecobiciSI.drop('groups', axis=1, inplace=True)
 
+    # Filtro para solo guardar los barrios que frecuento
+    neighborhoods = ["RETIRO", "PUERTO MADERO", "SAN CRISTOBAL", "BOCA", "BOEDO", "SAN TELMO", "PARQUE PATRICIOS"]
+    df_ecobiciSI = df_ecobiciSI[df_ecobiciSI['neighborhood'].isin(neighborhoods)]
+
     df_ecobici_stations = load_df_ecobici_stations(df_ecobiciSI, df_ecobici_stations)
 
     # Obtencion del número de bicicletas y anclajes disponibles en cada estación y disponibilidad de estación.
@@ -260,6 +267,9 @@ def get_ecobici_data(base_url, params):
 
     data_ecobiciSS= json_ecobiciSS['data']['stations']
     df_ecobiciSS = pd.DataFrame(data_ecobiciSS)
+
+    # Filtrado de estaciones de ecobici que me interesan
+    df_ecobiciSS = df_ecobiciSS[df_ecobiciSS['station_id'].isin(df_ecobiciSI['station_id'])]
 
     # Extraer los valores de las claves 'mechanical' y 'ebike' en nuevas columnas, porque asi lo arme en la tabla de la DB
     df_ecobiciSS['num_bikes_available_mechanical'] = df_ecobiciSS['num_bikes_available_types'].apply(lambda x: x['mechanical'] if isinstance(x, dict) and 'mechanical' in x else None)
@@ -284,6 +294,7 @@ def get_ecobici_data(base_url, params):
 #### CONEXION CON BASE DE DATOS
 
 def connect_to_redshift():
+    
     db_keys = read_api_credentials("config/pipeline.conf", "RedShift")
 
     try:  
@@ -341,6 +352,7 @@ def connect_to_redshift():
 
     try:
         conn.execute("""
+            DROP TABLE camilagonzalezalejo02_coderhouse.ecobici_stations;
             create table if not exists  camilagonzalezalejo02_coderhouse.ecobici_stations
             (       	
             station_id INTEGER,
@@ -382,13 +394,13 @@ def connect_to_redshift():
         print("No es posible crear tabla ecobici_stations_status en DB: ")
         print(e)
 
-    return db_keys, conn
+    return conn
 
 #### SUBIDA DE DATOS REDSHIFT
         
-def upload_data_to_redshift(db_keys, df_agencies, df_bus_positions, df_ecobici_stations, df_ecobici_stations_status, conn):
+def upload_data_to_redshift(df_agencies, df_bus_positions, df_ecobici_stations, df_ecobici_stations_status, conn):
     
-    string_conn =  f"postgresql://{db_keys['user']}:{db_keys['pwd']}@{db_keys['host']}:{db_keys['port']}/{db_keys['dbname']}"
+    #string_conn =  f"postgresql://{db_keys['user']}:{db_keys['pwd']}@{db_keys['host']}:{db_keys['port']}/{db_keys['dbname']}"
 
     #engine = sa.create_engine(string_conn)
 
@@ -402,8 +414,6 @@ def upload_data_to_redshift(db_keys, df_agencies, df_bus_positions, df_ecobici_s
 
     load_to_sql(df_ecobici_stations_status, "ecobici_stations_status", conn)
 
-    conn.close()
-
 # DATA INGESTION
     
 def data_ingestion():
@@ -414,9 +424,11 @@ def data_ingestion():
 
     df_ecobici_stations, df_ecobici_stations_status = get_ecobici_data(base_url, params)
 
-    db_keys, connection = connect_to_redshift()
+    connection = connect_to_redshift()
 
-    upload_data_to_redshift(db_keys, df_agencies, df_bus_positions, df_ecobici_stations, df_ecobici_stations_status, connection)
+    upload_data_to_redshift(df_agencies, df_bus_positions, df_ecobici_stations, df_ecobici_stations_status, connection)
+
+    connection.close()
 
 # MAIN
     
