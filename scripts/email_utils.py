@@ -1,7 +1,11 @@
 from airflow.models import Variable
 import smtplib
+from scripts.alert_utils import get_subte_alerts
 
-def enviar(msg, **context):
+def enviar_alerta(**context):
+
+    string_alert = get_subte_alerts()
+
     try:
         x = smtplib.SMTP('smtp.gmail.com',587)
         x.starttls()
@@ -12,8 +16,8 @@ def enviar(msg, **context):
             Variable.get('GMAIL_SECRET')
         )
 
-        subject = f'Airflow report {context["dag"]} {context["ds"]}'
-        body_text = msg
+        subject = f'Airflow reporte {context["dag"]} {context["ds"]}'
+        body_text = string_alert
         message='Subject: {}\n\n{}'.format(subject,body_text)
         
         x.sendmail('blue.photographer01@gmail.com', 'blue.photographer01@gmail.com', message)
