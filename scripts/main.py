@@ -425,7 +425,9 @@ def upload_data_to_redshift(df_agencies, df_bus_positions, df_ecobici_stations, 
 
 #### ETL PROCESS SUMMARY
     
-def etl_process(base_url, params, conn):
+def etl_process(base_url, params):
+
+    conn = connect_to_redshift()
 
     df_bus_positions, df_agencies = get_bus_data(base_url, params)
 

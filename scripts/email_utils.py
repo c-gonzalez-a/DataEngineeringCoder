@@ -1,7 +1,7 @@
 from airflow.models import Variable
 import smtplib
 
-def enviar(**context):
+def enviar(msg, **context):
     try:
         x = smtplib.SMTP('smtp.gmail.com',587)
         x.starttls()
@@ -13,7 +13,7 @@ def enviar(**context):
         )
 
         subject = f'Airflow report {context["dag"]} {context["ds"]}'
-        body_text = f'Task {context["task_instance_key_str"]} execute'
+        body_text = msg
         message='Subject: {}\n\n{}'.format(subject,body_text)
         
         x.sendmail('blue.photographer01@gmail.com', 'blue.photographer01@gmail.com', message)
