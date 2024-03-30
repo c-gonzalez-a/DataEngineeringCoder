@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime, timedelta
 from airflow.models import DAG
 from airflow.operators.python import PythonOperator
 from scripts.email_utils import enviar
@@ -13,8 +13,10 @@ def _enviar_mail(ti):
     enviar(msg)
 
 with DAG( 
+    owner = 'Camila Gonzalez',
     dag_id='dag_email_alert',
-    schedule_interval="* * * * *",
+    description='DAG para enviar alertas de red subte',
+    schedule_interval = timedelta(minutes=5),
     on_success_callback=None,
     catchup=False,
     start_date=datetime(2024,3,27)

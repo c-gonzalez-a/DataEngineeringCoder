@@ -1,7 +1,7 @@
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 from datetime import datetime, timedelta
-from scripts.main import connect_to_api, connect_to_redshift, etl_process
+from scripts.main import connect_to_api, etl_process
 
 def _connect_to_api(ti):
     base_url, params = connect_to_api()
@@ -24,7 +24,7 @@ with DAG(
     default_args=default_args,
     description='DAG para ejecutar tareas diarias',
     #schedule_interval="@daily",
-    schedule_interval = timedelta(minutes=30),
+    schedule_interval = timedelta(minutes=60),
     start_date=datetime(2024, 3, 28),
     catchup=False,
 ):
